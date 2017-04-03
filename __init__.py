@@ -16,4 +16,4 @@ def getMetaData():
     }
 
 def register(app):
-    return { "output_device": LayerCountPlugin.LayerCountPlugin() }
+    return {"extension": LayerCountPlugin.LayerCountPlugin()}
