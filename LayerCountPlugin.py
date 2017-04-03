@@ -35,7 +35,7 @@ class LayerCountExtension(QObject, Extension):
         QObject.__init__(self, parent)
         Extension.__init__(self)
 		
-	 self.addMenuItem("Setting", slef.run)        
+	 self.addMenuItem("Setting", self.run)        
     
     def run(self,data):
         count = "-"
