@@ -27,18 +27,17 @@ from UM.OutputDevice import OutputDeviceError
 
 
 from UM.i18n import i18nCatalog
-catalog = i18nCatalog("cura")
+i18n_catalog = i18nCatalog("cura")
 
 
-class LayerCountExtension(OutputDevicePlugin):
-    def __init__(self):
-        super().__init__()
+class LayerCountExtension(QObject, Extension):
+    def __init__(self, parent = None):
+        QObject.__init__(self, parent)
+        Extension.__init__(self)
 		
-	         
-    @property	
-    def start(self,stream, nodes,MeshWriter,OutputMode,TextMode):
-
-			
+	 self.addMenuItem("Setting", slef.run)        
+    
+    def run(self,data):
         count = "-"
         for index, layer in enumerate(data):
             new_layer = ""
